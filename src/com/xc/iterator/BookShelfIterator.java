@@ -4,16 +4,21 @@ public class BookShelfIterator<E> implements Iterator<E>{
 
     private BookShelf bookShelf;
 
-    private int index;
+    private int index=0;
 
     @Override
     public boolean hasNext() {
-        return false;
+        if(bookShelf.getBook(index)==null){
+            return false;
+        }else{
+            index++;
+            return false;
+        }
     }
 
     @Override
     public E next() {
-        return null;
+        return (E) bookShelf.getBook(index+1);
     }
 
 }
