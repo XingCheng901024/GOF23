@@ -6,14 +6,14 @@ package com.xc.iterator;
 public class Main {
 
     public static void main(String[] args){
-        BookShelf bookShelf = new BookShelf();
+        BookShelf bookShelf = new BookShelf(4);
         bookShelf.addBook(new Book("Think in Java"));
         bookShelf.addBook(new Book("Spring"));
         bookShelf.addBook(new Book("SpringBoot"));
         bookShelf.addBook(new Book("SpringCloud"));
 
-        Iterator it = (Iterator) bookShelf.iterator();
-        if(it.hasNext()){
+        Iterator it = bookShelf.iterator();
+        while(it.hasNext()){
             Book book = (Book) it.next();
             System.out.println(book.getName());
         }

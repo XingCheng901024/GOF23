@@ -1,24 +1,31 @@
 package com.xc.iterator;
 
-public class BookShelfIterator<E> implements Iterator<E>{
+public class BookShelfIterator implements Iterator{
 
     private BookShelf bookShelf;
 
-    private int index=0;
+    private int index;
+
+    public BookShelfIterator(BookShelf bookShelf){
+
+        this.bookShelf = bookShelf;
+        this.index = 0;
+    }
 
     @Override
     public boolean hasNext() {
-        if(bookShelf.getBook(index)==null){
-            return false;
+        if(index<bookShelf.getBooksCount()){
+            return true;
         }else{
-            index++;
             return false;
         }
     }
 
     @Override
-    public E next() {
-        return (E) bookShelf.getBook(index+1);
+    public Object next() {
+        Book book = bookShelf.getBook(index);
+        index++;
+        return book;
     }
 
 }

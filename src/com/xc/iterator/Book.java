@@ -8,9 +8,7 @@ public class Book {
         return name;
     }
 
-    public void setName(String name) {
+    public Book(String name){
         this.name = name;
     }
-
-    public Book(String name){}
 }
