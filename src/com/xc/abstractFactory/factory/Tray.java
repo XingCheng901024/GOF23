@@ -1,0 +1,17 @@
+package com.xc.abstractFactory.factory;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Tray extends Item{
+
+    protected List itemList = new ArrayList();
+    public Tray(String caption) {
+        super(caption);
+    }
+
+    public void add(Item item){
+        itemList.add(item);
+    }
+
+}
